@@ -136,7 +136,7 @@ for(var i = 0; i < trackList.length; i++) {
 
 	// Create a new Wave Surfer for each
 	var myWS = WaveSurfer.create({
-	    container: "#" + trackName,
+	    container: "#" + trackName.substr(trackName.lastIndexOf('/') + 1),
 	    waveColor: 'grey',
 	    progressColor: "#315A83", //'rgb(79,172,254)',
 	    fillParent: false,
