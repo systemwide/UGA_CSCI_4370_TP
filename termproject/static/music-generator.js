@@ -11,7 +11,7 @@ var trackList = [];
 function populateTracklist() {
 	var audioElems = document.querySelectorAll(".track");
 	for(var i = 0; i < audioElems.length; i++) {
-		trackList.push(audioElems[i].innerText);
+		trackList.push(audioElems[i].dataset.trackPath);
 	}
 }
 populateTracklist();
