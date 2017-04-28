@@ -117,8 +117,8 @@ var containers = [],
 	soundStarted = [];
 // Loop through the tracks we have
 for(var i = 0; i < trackList.length; i++) {
-	// Get the track name
-	var trackName = trackList[i].slice(0, -4); // Remove .mp3 extension
+	// Get the track name from file path
+	var trackName = trackList[i].substr(trackList[i].lastIndexOf('/') + 1).slice(0, -4); 
 
 	// Create a new container to use
 	var myContainer = document.createElement("div");
@@ -128,15 +128,11 @@ for(var i = 0; i < trackList.length; i++) {
 
 	trackContainer.appendChild(myContainer);
 
-
-	// Get the track name
-	var trackName = trackList[i].slice(0, -4);
-
 	soundStarted.push(false);
 
 	// Create a new Wave Surfer for each
 	var myWS = WaveSurfer.create({
-	    container: "#" + trackName.substr(trackName.lastIndexOf('/') + 1),
+	    container: "#" + trackName,
 	    waveColor: 'grey',
 	    progressColor: "#315A83", //'rgb(79,172,254)',
 	    fillParent: false,
