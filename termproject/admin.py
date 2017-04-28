@@ -15,6 +15,18 @@ class NoteAdmin(admin.ModelAdmin):
     list_display = ['song', 'id', 'avg_rating', ]
 
 
+class SongAdmin(admin.ModelAdmin):
+    model = Song
+    fields = ['name', 'model', 'date', ]
+    list_display = ['name', 'model', 'date', ]
+
+
+class RatingAdmin(admin.ModelAdmin):
+    model = Rating
+    fields = ['note', 'userID', 'value', ]
+    list_display = ['note', 'userID', 'value', ]
+
+
 admin.site.register(Note, NoteAdmin)
 admin.site.register(Rating)
 admin.site.register(Song)
